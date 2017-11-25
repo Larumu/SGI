@@ -1,0 +1,24 @@
+﻿  Reloj.cpp
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(30): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(31): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(44): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(55): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(59): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(71): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(73): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(75): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(80): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(82): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(84): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(114): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(144): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(155): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(164): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(165): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(172): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(173): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(209): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(245): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract5\reloj.cpp(246): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+  Pract5.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract5\Pract5.exe
+  Pract5.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract5\Pract5.pdb (Partial PDB)
