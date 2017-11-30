@@ -1,0 +1,14 @@
+﻿  Circuito.cpp
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  Pract6.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract6\Pract6.exe
+  Pract6.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract6\Pract6.pdb (Partial PDB)
