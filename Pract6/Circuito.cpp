@@ -1,4 +1,4 @@
-//PRÁCTICA 6 DE SISTEMAS GRÁFICOS INTERACTIVOS
+//PRÁCTICA 6 
 //Laura Ruiz Muñoz
 #define PROYECTO "Estrella de David"
 
@@ -16,7 +16,8 @@ GLfloat v0[3] = { 2,0,0 }, v1[3] = { -2,0,0 }, v2[3] = { -2,0,20}, v3[3] = { 2,0
 GLfloat v8[3] = { 0,0,43 }, v9[3] = { -1,0,38 }, v10[3] = { -14,0,38 }, v11[3] = { -18,0,43 }, v12[3] = { -18,0,0 }, v13[3] = { -14,0,0 }, v14[3] = { -14,0,-20 }, v15[3] = {-18,0,-17};
 GLfloat v16[3] = { -22,0,-22 }, v17[3] = { -18,0,-25 }, v18[3] = { -18,0,-35 }, v19[3] = { -22,0,-37 }, v20[3] = { -16,0,-43 }, v21[3] = { -15,0,-38 }, v22[3] = { -2,0,-38 }, v23[3] = {2,0,-43};
 GLfloat v24[3] = { 2,0,-21 }, v25[3] = { -2,0,-19 }, v26[3] = { 0,0,-16 }, v27[3] = { 4,0,-18 }, v28[3] = { 4,0,-9 }, v29[3] = { 0,0,-11 }, v30[3] = { -2,0,-7 }, v31[3] = {2,0,-5};
-static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1, velocity = 0, grad = 0;
+static float velocity = 0, grad = 0;
+static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1;
 static int N = 10, M = 10;
 
 using namespace std;
@@ -34,7 +35,7 @@ void init()
 	glNewList(tramo_2, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v2, v3, v4, v5, 3, 10);
+	quad(v3, v2, v5, v4, 3, 10);
 	glEndList();
 
 	tramo_3 = glGenLists(3);
@@ -44,14 +45,14 @@ void init()
 	quad(v4, v5, v7, v6, 3, 10);
 	glEndList();
 
-	tramo_4 = glGenLists(4);
+	tramo_4 = glGenLists(4); //ARREGLAR	
 	glNewList(tramo_4, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
 	quad(v6, v7, v9, v8, 3, 10);
 	glEndList();
 
-	tramo_5 = glGenLists(5);
+	tramo_5 = glGenLists(5); //ARREGLAR
 	glNewList(tramo_5, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
@@ -62,7 +63,7 @@ void init()
 	glNewList(tramo_6, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v10, v11, v12, v13, 3, 10);
+	quad(v11, v10, v13, v12, 3, 10);
 	glEndList();
 
 	tramo_7 = glGenLists(7);
@@ -76,7 +77,7 @@ void init()
 	glNewList(tramo_8, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v14, v15, v16, v17, 3, 10);
+	quad(v15, v14, v17, v16, 3, 10);
 	glEndList();
 
 	tramo_9 = glGenLists(9);
@@ -90,7 +91,7 @@ void init()
 	glNewList(tramo_10, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v18, v19, v20, v21, 3, 10);
+	quad(v19, v18, v21, v20, 3, 10);
 	glEndList();
 
 	tramo_11 = glGenLists(11);
@@ -104,7 +105,7 @@ void init()
 	glNewList(tramo_12, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v22, v23, v24, v25, 3, 10);
+	quad(v23, v22, v25, v24, 3, 10);
 	glEndList();
 
 	tramo_13 = glGenLists(13);
@@ -118,7 +119,7 @@ void init()
 	glNewList(tramo_14, GL_COMPILE);
 	glColor3f(0.0, 0.0, 0.0);
 	glPolygonMode(GL_FRONT, GL_LINE);
-	quad(v26, v27, v28, v29, 3, 10);
+	quad(v27, v26, v29, v28, 3, 10);
 	glEndList();
 
 	tramo_15 = glGenLists(15);
@@ -147,11 +148,11 @@ void display()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
+	gluLookAt(pos_x, 1, pos_z, look_x, 1,look_z, 0, 1, 0);
 
 	ejes();
 	glPushMatrix();
-	glRotatef(180, 0, 0, 1);
+	//glRotatef(180, 0, 0, 1);
 	glCallList(tramo_1);
 	glCallList(tramo_2);
 	glCallList(tramo_3);
@@ -189,10 +190,10 @@ void moverVehiculo()
 	static int horaAnterior = glutGet(GLUT_ELAPSED_TIME);
 	int horaActual = glutGet(GLUT_ELAPSED_TIME);
 	float tiempoTranscurrido = horaActual - horaAnterior;
-	pos_x -= velocity*(tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
-	pos_z -= velocity*(tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
-	look_z = pos_z - cos(grad*PI / 180.0);
-	look_x = pos_x - sin(grad*PI / 180.0);
+	pos_x += velocity*(tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
+	pos_z += velocity*(tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
+	look_z = pos_z + cos(grad*PI / 180.0);
+	look_x = pos_x + sin(grad*PI / 180.0);
 	horaAnterior = horaActual;
 }
 

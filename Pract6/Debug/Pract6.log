@@ -10,14 +10,14 @@ c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: '
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(191): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(192): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(193): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(194): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(192): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(193): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(194): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
 c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(195): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(204): warning C4305: '+=': truncamiento de 'double' a 'float'
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(206): warning C4305: '+=': truncamiento de 'double' a 'float'
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(208): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(210): warning C4305: '-=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(196): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(205): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(207): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(209): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract6\circuito.cpp(211): warning C4305: '-=': truncamiento de 'double' a 'float'
   Pract6.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract6\Pract6.exe
   Pract6.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract6\Pract6.pdb (Partial PDB)
