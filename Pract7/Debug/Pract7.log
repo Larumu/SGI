@@ -1,0 +1,35 @@
+﻿  Iluminación.cpp
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(54): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(54): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(55): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(55): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(62): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(62): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(64): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(64): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(82): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(83): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(84): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(85): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(86): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(102): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(102): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(104): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(104): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(121): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(140): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(167): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pract7\iluminación.cpp(171): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Pract7.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract7\Pract7.exe
+  Pract7.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract7\Pract7.pdb (Partial PDB)
