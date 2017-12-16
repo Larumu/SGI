@@ -46,7 +46,6 @@ void init()
 	quad(v27, v26, v29, v28, 30, 30);
 	quad(v28, v29, v30, v31, 30, 30);
 	quad(v31, v30, v1, v0, 30, 30);
-	//glColor3f(0.804, 0.522, 0.247);
 	glEndList();
 
 	glGetFloatv(GL_MODELVIEW_MATRIX, coef);
@@ -67,8 +66,38 @@ void init()
 	glLightfv(GL_LIGHT1, GL_SPECULAR, Sl1);
 	glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 25);
 	glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 20);
-
 	glEnable(GL_LIGHT1);
+
+	GLfloat Al2[] = { 0.0,0.0,0.0,1.0 };
+	GLfloat Dl2[] = { 0.5,0.5,0.2,1.0 };
+	GLfloat Sl2[] = { 0.0,0.0,0.0,1.0 };
+	glLightfv(GL_LIGHT2, GL_AMBIENT, Al2);
+	glLightfv(GL_LIGHT2, GL_DIFFUSE, Dl2);
+	glLightfv(GL_LIGHT2, GL_SPECULAR, Sl2);
+	glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 45);
+	glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, 10);
+	glEnable(GL_LIGHT2);
+
+	glLightfv(GL_LIGHT3, GL_AMBIENT, Al2);
+	glLightfv(GL_LIGHT3, GL_DIFFUSE, Dl2);
+	glLightfv(GL_LIGHT3, GL_SPECULAR, Sl2);
+	glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 45);
+	glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 10);
+	glEnable(GL_LIGHT3);
+
+	glLightfv(GL_LIGHT4, GL_AMBIENT, Al2);
+	glLightfv(GL_LIGHT4, GL_DIFFUSE, Dl2);
+	glLightfv(GL_LIGHT4, GL_SPECULAR, Sl2);
+	glLightf(GL_LIGHT4, GL_SPOT_CUTOFF, 45);
+	glLightf(GL_LIGHT4, GL_SPOT_EXPONENT, 10);
+	glEnable(GL_LIGHT4);
+
+	glLightfv(GL_LIGHT5, GL_AMBIENT, Al2);
+	glLightfv(GL_LIGHT5, GL_DIFFUSE, Dl2);
+	glLightfv(GL_LIGHT5, GL_SPECULAR, Sl2);
+	glLightf(GL_LIGHT5, GL_SPOT_CUTOFF, 45);
+	glLightf(GL_LIGHT5, GL_SPOT_EXPONENT, 10);
+	glEnable(GL_LIGHT5);
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LIGHTING);
@@ -96,13 +125,17 @@ void display()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
+	
+
 	GLfloat posicion[] = { 0,10,0,0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, posicion);
 
-	GLfloat dir_central[] = { 0,-0.5,-0.7 };
-	glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, dir_central);
 	GLfloat posicion1[] = { 0,0.7, 0, 1.0 };
 	glLightfv(GL_LIGHT1, GL_POSITION, posicion1);
+	GLfloat dir_central[] = { 0,-0.5,-0.7 };
+	glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, dir_central);
+
+	
 
 	moverVehiculo();
 	glMultMatrixf(coef);
@@ -112,27 +145,63 @@ void display()
 	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
 	glMultMatrixf(coef);
 	
-
 	ejes();
-	//glPushMatrix();
+
+	GLfloat posicion2[] = { 2.0,4.0,0.0, 1.0 };
+	glLightfv(GL_LIGHT2, GL_POSITION, posicion2);
+	GLfloat dir_central1[] = { 2.0,-1.0,0.0 };
+	glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, dir_central1);
+
+	GLfloat posicion3[] = { -2.0,4.0,0.0, 1.0 };
+	glLightfv(GL_LIGHT3, GL_POSITION, posicion3);
+	GLfloat dir_central2[] = { -2.0,-1.0,0.0 };
+	glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, dir_central2);
+
+	GLfloat posicion4[] = { 0.0,4.0,17.0, 1.0 };
+	glLightfv(GL_LIGHT4, GL_POSITION, posicion4);
+	GLfloat dir_central3[] = { 0.0,-1.0,17.0 };
+	glLightfv(GL_LIGHT4, GL_SPOT_DIRECTION, dir_central3);
+	
+	GLfloat posicion5[] = { 2,4.0,17.0, 1.0 };
+	glLightfv(GL_LIGHT5, GL_POSITION, posicion5);
+	GLfloat dir_central4[] = { 2,-1.0,17.0 };
+	glLightfv(GL_LIGHT4, GL_SPOT_DIRECTION, dir_central4);
+
+
 
 	if (modo == SOLIDO) {
 
-		glColor3f(0.545, 0.271, 0.075);
+		//glColor3f(0.545, 0.271, 0.075);
+		GLfloat Sm[] = { 0.3,0.3,0.3,1.0 };
+		GLfloat Dm[] = { 0.8,0.8,0.8,1.0 };
+		GLfloat s = 3.0;
+		glMaterialfv(GL_FRONT, GL_SPECULAR, Sm);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, Dm);
+		glMaterialf(GL_FRONT, GL_SHININESS, s);
 		glCallList(circuito);
 		glPolygonMode(GL_FRONT, GL_FILL);
 
-
 	}
 	else if (modo == ALAMBRICO) {
+		GLfloat Sm[] = { 0.3,0.3,0.3,1.0 };
+		GLfloat Dm[] = { 0.8,0.8,0.8,1.0 };
+		GLfloat s = 3.0;
+		glMaterialfv(GL_FRONT, GL_SPECULAR, Sm);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, Dm);
+		glMaterialf(GL_FRONT, GL_SHININESS, s);
 		glColor3f(0.0, 0.0, 0.0);
-
 		glCallList(circuito);
 		glPolygonMode(GL_FRONT, GL_LINE);
 
 
 	}
 	else {
+		GLfloat Sm[] = { 0.3,0.3,0.3,1.0 };
+		GLfloat Dm[] = { 0.8,0.8,0.8,1.0 };
+		GLfloat s = 3.0;
+		glMaterialfv(GL_FRONT, GL_SPECULAR, Sm);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, Dm);
+		glMaterialf(GL_FRONT, GL_SHININESS, s);
 		glPolygonMode(GL_FRONT, GL_LINE);
 		glColor3f(0.0, 0.0, 0.0);
 		glCallList(circuito);
@@ -141,9 +210,6 @@ void display()
 		glCallList(circuito);
 	}
 	
-	
-
-	//glPopMatrix();
 	glFlush();
 	glutSwapBuffers();
 }
@@ -152,7 +218,6 @@ void reshape(GLint w, GLint h)
 {
 	glViewport(0, 0, w, h);
 	float razon = (float)w / h;
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(45, razon, 1, 30);
@@ -172,7 +237,6 @@ void onSpecialKey(int key, int x, int y)
 		break;
 	case GLUT_KEY_RIGHT: grad -= 0.5;
 		break;
-
 	}
 	cuentakms << "Interfaz de conducción. SPEED " << velocity << " m/s";
 	glutSetWindowTitle(cuentakms.str().c_str());
@@ -187,9 +251,7 @@ void idle()
 
 void onKey(unsigned char tecla, int x, int y) {
 	switch (tecla) {
-	case 27:
-		exit(0);
-		break;
+	case 27: exit(0);
 	case 's': modo = SOLIDO;
 		break;
 	case 'i': modo = ALAMBRICO;
