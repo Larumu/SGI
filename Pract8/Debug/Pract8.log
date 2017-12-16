@@ -1,0 +1,21 @@
+﻿  Texturas.cpp
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(148): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(149): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(150): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(151): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(152): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(161): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pract8\texturas.cpp(165): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Pract8.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract8\Pract8.exe
+  Pract8.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pract8\Pract8.pdb (Partial PDB)
