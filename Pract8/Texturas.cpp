@@ -22,7 +22,7 @@ static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1;
 static int N = 10, M = 10;
 static enum { ALAMBRICO, SOLIDO, DOUBLE } modo;
 GLuint tex0;
-GLuint tex1, tex2;
+GLuint tex1, tex2, tex3, tex4;
 
 using namespace std;
 
@@ -70,6 +70,15 @@ void init()
 	loadImageFile("konodioda.jpg");
 	glEnable(GL_TEXTURE_2D);
 
+	glGenTextures(1, &tex3);
+	glBindTexture(GL_TEXTURE_2D, tex3);
+	loadImageFile("musepancarta.jpg");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex4);
+	glBindTexture(GL_TEXTURE_2D, tex4);
+	loadImageFile("supernaturabanner.jpg");
+	glEnable(GL_TEXTURE_2D);
 }
 
 void loadTexture() 
@@ -94,7 +103,7 @@ void display()
 	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
 
 	ejes();
-
+	//Palos de las pancartas
 	glBindTexture(GL_TEXTURE_2D, tex1);
 	// b. Filtros
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -126,7 +135,37 @@ void display()
 	glutSolidCube(1.0);
 	glPopMatrix();
 
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-5.0, 1.75, 38);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
 
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-5.0, 1.75, 43);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-14.0, 1.75, 10);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-18.0, 1.75, 10);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+
+
+	//Pancarta de Dio
 	glBindTexture(GL_TEXTURE_2D, tex2);
 	// b. Filtros
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -140,22 +179,93 @@ void display()
 
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-2.0, 2.0, 10);
+	glTranslatef(2.0, 2.0, 10);
+	glScalef(4.0, 4.0, 1.0);
+	glRotatef(180, 0, 1, 0);
+	//glutSolidCube(1.0);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0);
+	glTexCoord2f(0.0, 1.0);
+	glVertex3f(0.0, 0.56, 0);
+	glTexCoord2f(1.0, 1.0);
+	glVertex3f(1.0, 0.56, 0);
+	glTexCoord2f(1.0, 0);
+	glVertex3f(1.0, 0, 0);
+	
+	
+	glEnd();
+	glPopMatrix();
+
+	//Pancarta de Muse
+	glBindTexture(GL_TEXTURE_2D, tex3);
+	// b. Filtros
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	// c. Forma de combinar y repetir
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	//glTranslatef(-5.0, 2.0, 38);
+	glTranslatef(-5.0, 2.75, 43);
+	
+	glRotatef(90, 0, 1, 0);
+	glScalef(5.0, 5.0, 1.0);
+	//glutSolidCube(1.0);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0);
+	glTexCoord2f(0.0, 1.0);
+	glVertex3f(0.0, 0.5, 0);
+	glTexCoord2f(1.0, 1.0);
+	glVertex3f(1.0, 0.5, 0);
+	glTexCoord2f(1.0, 0);
+	glVertex3f(1.0, 0, 0);
+
+
+	glEnd();
+	glPopMatrix();
+
+	//Pancarta de spn
+	glBindTexture(GL_TEXTURE_2D, tex4);
+	// b. Filtros
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	// c. Forma de combinar y repetir
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	//glTranslatef(-5.0, 2.0, 38);
+	glTranslatef(-18.0, 2.5, 10);
+
+	//glRotatef(-90, 0, 1, 0);
 	glScalef(4.0, 4.0, 1.0);
 	//glutSolidCube(1.0);
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0, 0.0);
 	glVertex3f(0.0, 0.0, 0);
+	glTexCoord2f(0.0, 1.0);
+	glVertex3f(0.0, 0.37, 0);
+	glTexCoord2f(1.0, 1.0);
+	glVertex3f(1.0, 0.37, 0);
 	glTexCoord2f(1.0, 0);
 	glVertex3f(1.0, 0, 0);
-	glTexCoord2f(1.0, 1.0);
-	glVertex3f(1.0, 0.56, 0);
-	glTexCoord2f(0.0, 1.0);
-	glVertex3f(0.0, 0.56, 0);
+
+
 	glEnd();
 	glPopMatrix();
 
-
+	//Circuito arcoiris
 	glBindTexture(GL_TEXTURE_2D, tex0);
 	// b. Filtros
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
