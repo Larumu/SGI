@@ -22,7 +22,7 @@ static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1;
 static int N = 10, M = 10;
 static enum { ALAMBRICO, SOLIDO, DOUBLE } modo;
 GLuint tex0;
-GLuint tex1, tex2, tex3, tex4;
+GLuint tex1, tex2, tex3, tex4,tex5, tex6;
 
 using namespace std;
 
@@ -79,6 +79,16 @@ void init()
 	glBindTexture(GL_TEXTURE_2D, tex4);
 	loadImageFile("supernaturabanner.jpg");
 	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex5);
+	glBindTexture(GL_TEXTURE_2D, tex5);
+	loadImageFile("starwars.jpg");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex6);
+	glBindTexture(GL_TEXTURE_2D, tex6);
+	loadImageFile("cielo4.jpg");
+	glEnable(GL_TEXTURE_2D);
 }
 
 void loadTexture() 
@@ -103,6 +113,8 @@ void display()
 	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
 
 	ejes();
+
+	
 	//Palos de las pancartas
 	glBindTexture(GL_TEXTURE_2D, tex1);
 	// b. Filtros
@@ -121,6 +133,7 @@ void display()
 	glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
 	glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT1);
 
+	//Pancarta Dio
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
 	glTranslatef(-2.0, 1.75, 10);
@@ -128,6 +141,7 @@ void display()
 	glutSolidCube(1.0);
 	glPopMatrix();
 
+	
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
 	glTranslatef(2.0, 1.75, 10);
@@ -135,6 +149,7 @@ void display()
 	glutSolidCube(1.0);
 	glPopMatrix();
 
+	//Pancarta Muse
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
 	glTranslatef(-5.0, 1.75, 38);
@@ -149,6 +164,7 @@ void display()
 	glutSolidCube(1.0);
 	glPopMatrix();
 
+	//Pancarta SPN
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
 	glTranslatef(-14.0, 1.75, 10);
@@ -159,6 +175,21 @@ void display()
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 0.0);
 	glTranslatef(-18.0, 1.75, 10);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+	//Pancarta Star Wars
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-7.0, 1.75, -38);
+	glScalef(0.1, 3.5, 0.1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	glTranslatef(-7.0, 1.75, -43);
 	glScalef(0.1, 3.5, 0.1);
 	glutSolidCube(1.0);
 	glPopMatrix();
@@ -265,6 +296,61 @@ void display()
 	glEnd();
 	glPopMatrix();
 
+	//Pancarta de Star Wars
+	glBindTexture(GL_TEXTURE_2D, tex5);
+	// b. Filtros
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	// c. Forma de combinar y repetir
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+
+	glPushMatrix();
+	glColor3f(0.0, 0.0, 0.0);
+	//glTranslatef(-5.0, 2.0, 38);
+	glTranslatef(-7.0, 2.0, -43);
+
+	glRotatef(-90, 0, 1, 0);
+	glScalef(5.05, 5.05, 1.0);
+	//glutSolidCube(1.0);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0);
+	glTexCoord2f(0.0, 1.0);
+	glVertex3f(0.0, 0.375, 0);
+	glTexCoord2f(1.0, 1.0);
+	glVertex3f(1.0, 0.375, 0);
+	glTexCoord2f(1.0, 0);
+	glVertex3f(1.0, 0, 0);
+
+
+	glEnd();
+	glPopMatrix();
+
+	glBindTexture(GL_TEXTURE_2D, tex6);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	// c. Forma de combinar y repetir
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+	glBegin(GL_QUAD_STRIP);
+	float alfa = 2 * PI / 100.0;
+	for (int i = 0; i <= 100; i++) {
+		float ex = pos_x + 10* sin(i*alfa);
+		float ez = pos_z + 10 * cos(i*alfa);
+		glTexCoord2f(i*alfa / (2.0*PI), 0);
+		glVertex3f(ex, -170, ez);
+		glTexCoord2f(i*alfa / (2.0*PI), 1);
+		glVertex3f(ex, 190, ez);
+	}
+	glEnd();
+
 	//Circuito arcoiris
 	glBindTexture(GL_TEXTURE_2D, tex0);
 	// b. Filtros
@@ -315,7 +401,7 @@ void reshape(GLint w, GLint h)
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45, razon, 1, 30);
+	gluPerspective(45, razon, 1, 100);
 }
 
 void moverVehiculo()
