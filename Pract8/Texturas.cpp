@@ -1,6 +1,6 @@
 //PRÁCTICA 8 de Introducción a los sistemas gráficos interactivos (Texturas)
 //Laura Ruiz Muñoz
-#define PROYECTO "Estrella de David"
+#define PROYECTO "Circuito"
 
 #include <iostream>
 #include <cmath>
@@ -16,25 +16,18 @@ GLfloat v0[3] = { 2,0,0 }, v1[3] = { -2,0,0 }, v2[3] = { -2,0,20 }, v3[3] = { 2,
 GLfloat v8[3] = { 0,0,43 }, v9[3] = { -1,0,38 }, v10[3] = { -14,0,38 }, v11[3] = { -18,0,43 }, v12[3] = { -18,0,0 }, v13[3] = { -14,0,0 }, v14[3] = { -14,0,-20 }, v15[3] = { -18,0,-17 };
 GLfloat v16[3] = { -22,0,-22 }, v17[3] = { -18,0,-25 }, v18[3] = { -18,0,-35 }, v19[3] = { -22,0,-37 }, v20[3] = { -16,0,-43 }, v21[3] = { -15,0,-38 }, v22[3] = { -2,0,-38 }, v23[3] = { 2,0,-43 };
 GLfloat v24[3] = { 2,0,-21 }, v25[3] = { -2,0,-19 }, v26[3] = { 0,0,-16 }, v27[3] = { 4,0,-18 }, v28[3] = { 4,0,-9 }, v29[3] = { 0,0,-11 }, v30[3] = { -2,0,-7 }, v31[3] = { 2,0,-5 };
-//GLfloat v31[3]={-18, 0,50}, v32[3]={}
 static float velocity = 0, grad = 0;
 static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1;
 static int N = 10, M = 10;
-static enum { ALAMBRICO, SOLIDO, DOUBLE } modo;
-GLuint tex0;
-GLuint tex1, tex2, tex3, tex4,tex5, tex6;
+static enum { ALAMBRICO, SOLIDO } modo;
+GLuint tex0, tex1, tex2, tex3, tex4,tex5, tex6;
 
 using namespace std;
 
-
-
 void init()
 {
-
-
 	circuito = glGenLists(42);
 	glNewList(circuito, GL_COMPILE);
-
 	quad(v0, v1, v2, v3, 3, 10);
 	quad(v3, v2, v5, v4, 3, 10);
 	quad(v4, v5, v7, v6, 3, 10);
@@ -51,7 +44,6 @@ void init()
 	quad(v27, v26, v29, v28, 3, 10);
 	quad(v28, v29, v30, v31, 3, 10);
 	quad(v31, v30, v1, v0, 3, 10);
-	//glColor3f(0.804, 0.522, 0.247);
 	glEndList();
 
 
@@ -109,286 +101,396 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
 	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
-
 	ejes();
-
-	
-	//Palos de las pancartas
-	glBindTexture(GL_TEXTURE_2D, tex1);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-	GLfloat planoS1[] = { 0,0,0,0 };
-	GLfloat planoT1[] = { -0.1,3,0,0 };
-	glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-	glTexGenfv(GL_S, GL_OBJECT_PLANE, planoS1);
-	glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-	glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT1);
-
-	//Pancarta Dio
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-2.0, 1.75, 10);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(2.0, 1.75, 10);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	//Pancarta Muse
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-5.0, 1.75, 38);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-5.0, 1.75, 43);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	//Pancarta SPN
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-14.0, 1.75, 10);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-18.0, 1.75, 10);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	//Pancarta Star Wars
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-7.0, 1.75, -38);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(-7.0, 1.75, -43);
-	glScalef(0.1, 3.5, 0.1);
-	glutSolidCube(1.0);
-	glPopMatrix();
-
-
-
-	//Pancarta de Dio
-	glBindTexture(GL_TEXTURE_2D, tex2);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	glTranslatef(2.0, 2.0, 10);
-	glScalef(4.0, 4.0, 1.0);
-	glRotatef(180, 0, 1, 0);
-	//glutSolidCube(1.0);
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0, 0.0);
-	glVertex3f(0.0, 0.0, 0);
-	glTexCoord2f(0.0, 1.0);
-	glVertex3f(0.0, 0.56, 0);
-	glTexCoord2f(1.0, 1.0);
-	glVertex3f(1.0, 0.56, 0);
-	glTexCoord2f(1.0, 0);
-	glVertex3f(1.0, 0, 0);
-	
-	
-	glEnd();
-	glPopMatrix();
-
-	//Pancarta de Muse
-	glBindTexture(GL_TEXTURE_2D, tex3);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	//glTranslatef(-5.0, 2.0, 38);
-	glTranslatef(-5.0, 2.75, 43);
-	
-	glRotatef(90, 0, 1, 0);
-	glScalef(5.0, 5.0, 1.0);
-	//glutSolidCube(1.0);
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0, 0.0);
-	glVertex3f(0.0, 0.0, 0);
-	glTexCoord2f(0.0, 1.0);
-	glVertex3f(0.0, 0.5, 0);
-	glTexCoord2f(1.0, 1.0);
-	glVertex3f(1.0, 0.5, 0);
-	glTexCoord2f(1.0, 0);
-	glVertex3f(1.0, 0, 0);
-
-
-	glEnd();
-	glPopMatrix();
-
-	//Pancarta de spn
-	glBindTexture(GL_TEXTURE_2D, tex4);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	//glTranslatef(-5.0, 2.0, 38);
-	glTranslatef(-18.0, 2.5, 10);
-
-	//glRotatef(-90, 0, 1, 0);
-	glScalef(4.0, 4.0, 1.0);
-	//glutSolidCube(1.0);
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0, 0.0);
-	glVertex3f(0.0, 0.0, 0);
-	glTexCoord2f(0.0, 1.0);
-	glVertex3f(0.0, 0.37, 0);
-	glTexCoord2f(1.0, 1.0);
-	glVertex3f(1.0, 0.37, 0);
-	glTexCoord2f(1.0, 0);
-	glVertex3f(1.0, 0, 0);
-
-
-	glEnd();
-	glPopMatrix();
-
-	//Pancarta de Star Wars
-	glBindTexture(GL_TEXTURE_2D, tex5);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-
-	glPushMatrix();
-	glColor3f(0.0, 0.0, 0.0);
-	//glTranslatef(-5.0, 2.0, 38);
-	glTranslatef(-7.0, 2.0, -43);
-
-	glRotatef(-90, 0, 1, 0);
-	glScalef(5.05, 5.05, 1.0);
-	//glutSolidCube(1.0);
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0, 0.0);
-	glVertex3f(0.0, 0.0, 0);
-	glTexCoord2f(0.0, 1.0);
-	glVertex3f(0.0, 0.375, 0);
-	glTexCoord2f(1.0, 1.0);
-	glVertex3f(1.0, 0.375, 0);
-	glTexCoord2f(1.0, 0);
-	glVertex3f(1.0, 0, 0);
-
-
-	glEnd();
-	glPopMatrix();
-
-	glBindTexture(GL_TEXTURE_2D, tex6);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-	glBegin(GL_QUAD_STRIP);
-	float alfa = 2 * PI / 10.0;
-	for (int i = 0; i <= 10; i++) {
-		float ex =75* sin(i*alfa);
-		float ez = 75 * cos(i*alfa);
-		glTexCoord2f(i*alfa / (2.0*PI), 0);
-		glVertex3f(ex, -75, ez);
-		glTexCoord2f(i*alfa / (2.0*PI), 1);
-		glVertex3f(ex, 75, ez);
-	}
-	glEnd();
-
-	//Circuito arcoiris
-	glBindTexture(GL_TEXTURE_2D, tex0);
-	// b. Filtros
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	// c. Forma de combinar y repetir
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-	GLfloat planoS[] = { -2,0,0,0 };
-	GLfloat planoT[] = { -2,0,20,0 };
-	glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-	glTexGenfv(GL_S, GL_OBJECT_PLANE, planoS);
-	glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-	glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT);
 
 	glPushMatrix();
 	if (modo == SOLIDO) {
+
+		glEnable(GL_TEXTURE_2D);
+
+		//Circuito arcoiris sólido
+		glBindTexture(GL_TEXTURE_2D, tex0);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		GLfloat planoS[] = { -2,0,0,0 };
+		GLfloat planoT[] = { -2,0,20,0 };
+		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGenfv(GL_S, GL_OBJECT_PLANE, planoS);
+		glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT);
 		glCallList(circuito);
 		glPolygonMode(GL_FRONT, GL_FILL);
+
+		//Fondo paisaje sólido
+		glBindTexture(GL_TEXTURE_2D, tex6);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		glBegin(GL_QUAD_STRIP);
+		float alfa = 2 * PI / 10.0;
+		for (int i = 0; i <= 10; i++) {
+			float ex = 75 * sin(i*alfa);
+			float ez = 75 * cos(i*alfa);
+			glTexCoord2f(i*alfa / (2.0*PI), 0);
+			glVertex3f(ex, -75, ez);
+			glTexCoord2f(i*alfa / (2.0*PI), 1);
+			glVertex3f(ex, 75, ez);
+		}
+		glEnd();
+
+		//Textura de los postes de las pancartas
+		glBindTexture(GL_TEXTURE_2D, tex1);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		GLfloat planoS1[] = { 0,0,0,0 };
+		GLfloat planoT1[] = { -0.1,3,0,0 };
+		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGenfv(GL_S, GL_OBJECT_PLANE, planoS1);
+		glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT1);
+
+		//Postes de pancarta Dio
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-2.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(2.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//Postes de Pancarta Muse sólidos
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 1.75, 38);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 1.75, 43);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//Postes de pancarta SPN sólidos
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-14.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-18.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//Postes de pancarta Star Wars sólidos
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 1.75, -38);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 1.75, -43);
+		glScalef(0.1, 3.5, 0.1);
+		glutSolidCube(1.0);
+		glPopMatrix();
+
+		//Pancarta de Dio sólida
+		glBindTexture(GL_TEXTURE_2D, tex2);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(2.0, 2.0, 10);
+		glScalef(4.0, 4.0, 1.0);
+		glRotatef(180, 0, 1, 0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 0.0);
+		glVertex3f(0.0, 0.0, 0);
+		glTexCoord2f(0.0, 1.0);
+		glVertex3f(0.0, 0.56, 0);
+		glTexCoord2f(1.0, 1.0);
+		glVertex3f(1.0, 0.56, 0);
+		glTexCoord2f(1.0, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de Muse sólida
+		glBindTexture(GL_TEXTURE_2D, tex3);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 2.75, 43);
+		glRotatef(90, 0, 1, 0);
+		glScalef(5.0, 5.0, 1.0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 0.0);
+		glVertex3f(0.0, 0.0, 0);
+		glTexCoord2f(0.0, 1.0);
+		glVertex3f(0.0, 0.5, 0);
+		glTexCoord2f(1.0, 1.0);
+		glVertex3f(1.0, 0.5, 0);
+		glTexCoord2f(1.0, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de SPN sólida
+		glBindTexture(GL_TEXTURE_2D, tex4);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-18.0, 2.5, 10);
+		glScalef(4.0, 4.0, 1.0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 0.0);
+		glVertex3f(0.0, 0.0, 0);
+		glTexCoord2f(0.0, 1.0);
+		glVertex3f(0.0, 0.37, 0);
+		glTexCoord2f(1.0, 1.0);
+		glVertex3f(1.0, 0.37, 0);
+		glTexCoord2f(1.0, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de Star Wars sólida
+		glBindTexture(GL_TEXTURE_2D, tex5);
+		// b. Filtros
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		// c. Forma de combinar y repetir
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 2.0, -43);
+		glRotatef(-90, 0, 1, 0);
+		glScalef(5.05, 5.05, 1.0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 0.0);
+		glVertex3f(0.0, 0.0, 0);
+		glTexCoord2f(0.0, 1.0);
+		glVertex3f(0.0, 0.375, 0);
+		glTexCoord2f(1.0, 1.0);
+		glVertex3f(1.0, 0.375, 0);
+		glTexCoord2f(1.0, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		glDisable(GL_TEXTURE_2D);
+
+
 	}
 	else if (modo == ALAMBRICO) {
-		glCallList(circuito);
-		glPolygonMode(GL_FRONT, GL_LINE);
-	}
-	else {
-		glPolygonMode(GL_FRONT, GL_LINE);
+		//Postes de pancarta Dio alámbricos
+		//(1)
+		glPushMatrix();
 		glColor3f(0.0, 0.0, 0.0);
-		glCallList(circuito);
-		glPolygonMode(GL_FRONT, GL_FILL);
+		glTranslatef(-2.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(2.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//Postes de pancarta Muse alámbricos
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 1.75, 38);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 1.75, 43);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//Postes de pancarta SPN alámbricos
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-14.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-18.0, 1.75, 10);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//Postes de pancarta Star Wars alámbricos 
+		//(1)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 1.75, -38);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//(2)
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 1.75, -43);
+		glScalef(0.1, 3.5, 0.1);
+		glutWireCube(1.0);
+		glPopMatrix();
+
+		//Pancarta de Dio alámbrica
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(2.0, 2.0, 10);
+		glScalef(4.0, 4.0, 1.0);
+		glRotatef(180, 0, 1, 0);
+		glBegin(GL_LINE_LOOP);
+		glVertex3f(0.0, 0.0, 0);
+		glVertex3f(0.0, 0.56, 0);
+		glVertex3f(1.0, 0.56, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de Muse alámbrica
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-5.0, 2.75, 43);
+		glRotatef(90, 0, 1, 0);
+		glScalef(5.0, 5.0, 1.0);
+		glBegin(GL_LINE_LOOP);
+		glVertex3f(0.0, 0.0, 0);
+		glVertex3f(0.0, 0.5, 0);
+		glVertex3f(1.0, 0.5, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de SPN alámbrica
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-18.0, 2.5, 10);
+		glScalef(4.0, 4.0, 1.0);
+		glBegin(GL_LINE_LOOP);
+		glVertex3f(0.0, 0.0, 0);
+		glVertex3f(0.0, 0.37, 0);
+		glVertex3f(1.0, 0.37, 0);
+		glVertex3f(1.0, 0, 0);
+		glEnd();
+		glPopMatrix();
+
+		//Pancarta de Star Wars alámbrica
+		glPushMatrix();
+		glColor3f(0.0, 0.0, 0.0);
+		glTranslatef(-7.0, 2.0, -43);
+		glRotatef(-90, 0, 1, 0);
+		glScalef(5.05, 5.05, 1.0);
+		glBegin(GL_LINE_LOOP);
+		glVertex3f(0.0, 0.0, 0);
+		glVertex3f(0.0, 0.375, 0);
+		glVertex3f(1.0, 0.375, 0);
+		glVertex3f(1.0, 0, 0);
+
+		glEnd();
+		glPopMatrix();
+
+		//Cilindro para textura alámbrico
+		glBegin(GL_QUAD_STRIP);
+		float alfa = 2 * PI / 10.0;
+		for (int i = 0; i <= 10; i++) {
+			float ex = 75 * sin(i*alfa);
+			float ez = 75 * cos(i*alfa);
+			glTexCoord2f(i*alfa / (2.0*PI), 0);
+			glVertex3f(ex, -75, ez);
+			glTexCoord2f(i*alfa / (2.0*PI), 1);
+			glVertex3f(ex, 75, ez);
+		}
+		glEnd();
+
+		//Circuito alámbrico
+		glColor3f(0.0, 0.0, 0.0);
+		glPolygonMode(GL_FRONT, GL_LINE);
 		glCallList(circuito);
 	}
-	glPopMatrix();
-
 	
-
+	glPopMatrix();
 
 	glFlush();
 	glutSwapBuffers();
@@ -398,7 +500,6 @@ void reshape(GLint w, GLint h)
 {
 	glViewport(0, 0, w, h);
 	float razon = (float)w / h;
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(45, razon, 1, 150);
@@ -447,11 +548,9 @@ void onKey(unsigned char tecla, int x, int y) {
 	case 27:
 		exit(0);
 		break;
-	case 's': modo = SOLIDO;
+	case 'S': modo = SOLIDO;
 		break;
-	case 'i': modo = ALAMBRICO;
-		break;
-	case 'o': modo = DOUBLE;
+	case 's': modo = ALAMBRICO;
 		break;
 	}
 	glutPostRedisplay();
