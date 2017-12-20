@@ -87,7 +87,7 @@ void init()
 
 	glGenTextures(1, &tex6);
 	glBindTexture(GL_TEXTURE_2D, tex6);
-	loadImageFile("cielo4.jpg");
+	loadImageFile("fantasy.jpg");
 	glEnable(GL_TEXTURE_2D);
 }
 
@@ -340,14 +340,14 @@ void display()
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
 	glBegin(GL_QUAD_STRIP);
-	float alfa = 2 * PI / 100.0;
-	for (int i = 0; i <= 100; i++) {
-		float ex = pos_x + 10* sin(i*alfa);
-		float ez = pos_z + 10 * cos(i*alfa);
+	float alfa = 2 * PI / 10.0;
+	for (int i = 0; i <= 10; i++) {
+		float ex =75* sin(i*alfa);
+		float ez = 75 * cos(i*alfa);
 		glTexCoord2f(i*alfa / (2.0*PI), 0);
-		glVertex3f(ex, -170, ez);
+		glVertex3f(ex, -75, ez);
 		glTexCoord2f(i*alfa / (2.0*PI), 1);
-		glVertex3f(ex, 190, ez);
+		glVertex3f(ex, 75, ez);
 	}
 	glEnd();
 
@@ -401,7 +401,7 @@ void reshape(GLint w, GLint h)
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45, razon, 1, 100);
+	gluPerspective(45, razon, 1, 150);
 }
 
 void moverVehiculo()
