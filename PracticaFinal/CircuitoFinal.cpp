@@ -94,7 +94,7 @@ void init()
 	glLightfv(GL_LIGHT0, GL_SPECULAR, Sl0);
 	glEnable(GL_LIGHT0);
 
-	GLfloat Al1[] = { 0.2,0.2,0.2,1.0 };
+	GLfloat Al1[] = { 0.5,0.5,0.5,1.0 };
 	GLfloat Dl1[] = { 1.0,1.0,1.0,1.0 };
 	GLfloat Sl1[] = { 0.3,0.3,0.3,1.0 };
 	glLightfv(GL_LIGHT1, GL_AMBIENT, Al1);
@@ -140,6 +140,18 @@ void init()
 	
 }
 
+void moverVehiculo()
+{
+	static int horaAnterior = glutGet(GLUT_ELAPSED_TIME);
+	int horaActual = glutGet(GLUT_ELAPSED_TIME);
+	float tiempoTranscurrido = horaActual - horaAnterior;
+	pos_x += velocity*(tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
+	pos_z += velocity*(tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
+	look_z = pos_z + cos(grad*PI / 180.0);
+	look_x = pos_x + sin(grad*PI / 180.0);
+	horaAnterior = horaActual;
+}
+
 void display()
 
 {
@@ -148,21 +160,63 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0, 200, 0, 0, 0, 0, 0, 0, -1);
-	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
-	ejes();
-
+	
 
 	//MENSAJE PARA LAURA DEL FUTURO: TOCA ESTO Y TE REVIENTO
 	if (luces == ACTIVAR) {
 
 		glEnable(GL_LIGHTING);
+
+		GLfloat posicion[] = { 0,10,0,0 };
+		glLightfv(GL_LIGHT0, GL_POSITION, posicion);
+
+		GLfloat posicion1[] = { 0,0.7, 0, 1.0 };
+		glLightfv(GL_LIGHT1, GL_POSITION, posicion1);
+		GLfloat dir_central[] = { 0,-0.5,-0.7 };
+		glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, dir_central);
 	}
-	else if (luces == DESACTIVAR) {
+
+
+
+	moverVehiculo();
+	glMultMatrixf(coef);
+	glGetFloatv(GL_MODELVIEW_MATRIX, coef);
+
+	glLoadIdentity();
+	//gluLookAt(0, 200, 0, 0, 0, 0, 0, 0, -1);
+	gluLookAt(pos_x, 1, pos_z, look_x, 1, look_z, 0, 1, 0);
+	glMultMatrixf(coef);
+	ejes();
+
+	if (luces == ACTIVAR){
+
+		GLfloat posicion2[] = { 0.0,3.0,8.0, 1.0 };
+		glLightfv(GL_LIGHT2, GL_POSITION, posicion2);
+		GLfloat dir_central1[] = { 0.0,-1.0,8.0 };
+		glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, dir_central1);
+
+		GLfloat posicion3[] = { -2.0,4.0,0.0, 1.0 };
+		glLightfv(GL_LIGHT3, GL_POSITION, posicion3);
+		GLfloat dir_central2[] = { -2.0,-1.0,0.0 };
+		glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, dir_central2);
+
+		GLfloat posicion4[] = { 0.0,4.0,17.0, 1.0 };
+		glLightfv(GL_LIGHT4, GL_POSITION, posicion4);
+		GLfloat dir_central3[] = { 0.0,-1.0,17.0 };
+		glLightfv(GL_LIGHT4, GL_SPOT_DIRECTION, dir_central3);
+
+		GLfloat posicion5[] = { 2,4.0,17.0, 1.0 };
+		glLightfv(GL_LIGHT5, GL_POSITION, posicion5);
+		GLfloat dir_central4[] = { 2,-1.0,17.0 };
+		glLightfv(GL_LIGHT4, GL_SPOT_DIRECTION, dir_central4);
+	}
+
+	if (luces == DESACTIVAR) {
 		
 		glDisable(GL_LIGHTING);
 	}
 
+	
 
 	glPushMatrix();
 	if (modo == SOLIDO) {
@@ -186,6 +240,13 @@ void display()
 			glTexGenfv(GL_S, GL_OBJECT_PLANE, planoS);
 			glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
 			glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT);
+
+			GLfloat Sm[] = { 0.3,0.3,0.3,1.0 };
+			GLfloat Dm[] = { 0.8,0.8,0.8,1.0 };
+			GLfloat s = 3.0;
+			glMaterialfv(GL_FRONT, GL_SPECULAR, Sm);
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, Dm);
+			glMaterialf(GL_FRONT, GL_SHININESS, s);
 		}
 		else if (luces == DESACTIVAR) {
 			glBindTexture(GL_TEXTURE_2D, tex0);
@@ -205,6 +266,8 @@ void display()
 			glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
 			glTexGenfv(GL_T, GL_OBJECT_PLANE, planoT);
 		}
+
+		
 
 		glCallList(circuito);
 		glPolygonMode(GL_FRONT, GL_FILL);
@@ -320,6 +383,11 @@ void display()
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
+			GLfloat posicion2[] = { 0.0,3.0,8.0, 1.0 };
+			glLightfv(GL_LIGHT2, GL_POSITION, posicion2);
+			GLfloat dir_central1[] = { 0.0,-1.0,8.0 };
+			glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, dir_central1);
 		}
 		else if (luces == DESACTIVAR) {
 			//Pancarta de Dio sólida
@@ -473,6 +541,7 @@ void display()
 
 	}
 	else if (modo == ALAMBRICO) {
+		glDisable(GL_LIGHTING);
 		//Postes de pancarta Dio alámbricos
 		//(1)
 		glPushMatrix();
@@ -631,17 +700,7 @@ void reshape(GLint w, GLint h)
 	gluPerspective(45, razon, 1, 4000);
 }
 
-void moverVehiculo()
-{
-	static int horaAnterior = glutGet(GLUT_ELAPSED_TIME);
-	int horaActual = glutGet(GLUT_ELAPSED_TIME);
-	float tiempoTranscurrido = horaActual - horaAnterior;
-	pos_x += velocity*(tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
-	pos_z += velocity*(tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
-	look_z = pos_z + cos(grad*PI / 180.0);
-	look_x = pos_x + sin(grad*PI / 180.0);
-	horaAnterior = horaActual;
-}
+
 
 void onSpecialKey(int key, int x, int y)
 {
