@@ -1,0 +1,22 @@
+﻿  Triangle.cpp
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(138): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(208): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(249): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(250): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(255): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(257): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(280): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\retoques\triangle.cpp(281): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+  Retoques.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Retoques\Retoques.exe
+  Retoques.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Retoques\Retoques.pdb (Partial PDB)

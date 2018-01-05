@@ -10,68 +10,80 @@ c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: '
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
 c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(89): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(89): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(90): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(90): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(99): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(99): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(108): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(108): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(147): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(148): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(149): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(150): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(151): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(173): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(173): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(175): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(175): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(244): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(244): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(245): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(245): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(297): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(301): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(303): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(311): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(313): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(319): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(321): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(328): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(330): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(336): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(338): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(345): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(347): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(353): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(355): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(362): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(364): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(370): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(372): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(105): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(105): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(106): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(106): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(115): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(115): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(124): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(124): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(167): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(168): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(169): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(170): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(171): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(194): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(194): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(196): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(196): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(201): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(201): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(204): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(210): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(210): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(213): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(235): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(240): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(240): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(241): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(242): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(243): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(330): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(330): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(331): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(331): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(382): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(386): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(388): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(396): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(398): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(404): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(406): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
 c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(413): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
 c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(415): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(492): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(494): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(527): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(550): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(558): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(567): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(575): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(584): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(592): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(601): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(609): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(621): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(622): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(421): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(423): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(430): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(432): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(438): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(440): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(447): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(449): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(455): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(457): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(493): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(495): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(572): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(574): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(607): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(631): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(639): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
 c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(648): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(649): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(659): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(671): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(675): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(677): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(710): warning C4305: '+=': truncamiento de 'double' a 'float'
-c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(714): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(656): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(665): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(673): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(682): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(690): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(702): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(703): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(729): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(730): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(740): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(752): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(756): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(758): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(790): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\practicafinal\circuitofinal.cpp(794): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
   PracticaFinal.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\PracticaFinal\PracticaFinal.exe
   PracticaFinal.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\PracticaFinal\PracticaFinal.pdb (Partial PDB)

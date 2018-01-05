@@ -1,0 +1,82 @@
+﻿  Dodecagono.cpp
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(29): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(30): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(35): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(36): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4838: la conversión de 'double' en 'const GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(38): warning C4305: 'inicializando': truncamiento de 'double' a 'const GLfloat'
+c:\users\laura\u\4º\visual studio\gl\include\utilidades.h(252): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(12): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(12): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(27): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(27): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(35): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(35): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(36): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(36): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(42): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(42): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(43): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(43): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(51): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(51): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(144): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(148): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(150): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(155): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(156): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(157): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(162): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(163): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(171): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(171): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(172): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(172): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(173): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(173): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(174): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(174): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(177): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(177): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(178): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(178): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(179): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(179): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(180): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(180): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(185): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(185): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(186): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(186): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(187): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(187): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(188): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(188): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(191): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(191): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(192): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(192): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(193): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(193): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(194): warning C4838: la conversión de 'double' en 'float' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(194): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(208): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(211): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(243): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(243): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(248): warning C4838: la conversión de 'double' en 'GLfloat' requiere una conversión de restricción
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(248): warning C4305: 'inicializando': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(274): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(298): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(299): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(300): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(301): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(302): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(317): warning C4305: '+=': truncamiento de 'double' a 'float'
+c:\users\laura\u\4º\visual studio\pract1\pruebas\dodecagono.cpp(320): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Pruebas.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pruebas\Pruebas.exe
+  Pruebas.vcxproj -> C:\Users\LAURA\U\4º\Visual Studio\Pract1\Pruebas\Pruebas.pdb (Partial PDB)
