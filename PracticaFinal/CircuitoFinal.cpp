@@ -19,11 +19,12 @@ GLfloat v24[3] = { 2,0,-21 }, v25[3] = { -2,0,-19 }, v26[3] = { 0,0,-16 }, v27[3
 static float velocity = 0, grad = 0;
 static float pos_x = 0, pos_z = 0, look_x = 0, look_z = 1;
 static int N = 10, M = 10;
-static enum {SOLIDO,ALAMBRICO } modo;
-static enum { DESACTIVAR,ACTIVAR } luces;
-static enum { SECO,HUMEDO }  niebla;
-static enum { ON, OFF} efectos;
-GLuint tex0, tex1, tex2, tex3, tex4, tex5, tex6,tex7;
+static enum { SOLIDO, ALAMBRICO } modo;
+static enum { DESACTIVAR, ACTIVAR } luces;
+static enum { SECO, HUMEDO }  niebla;
+static enum { ON, OFF } efectos;
+static enum { NOCHE,DIA} textura;
+GLuint tex0, tex1, tex2, tex3, tex4, tex5, tex6, tex7,tex8,tex9,tex10,tex11;
 static float coef[16];
 
 using namespace std;
@@ -32,12 +33,12 @@ void init()
 {
 	glShadeModel(GL_SMOOTH);
 	glNormal3f(0, 1, 0);
-	
+
 
 	circuito = glGenLists(42);
 	glNewList(circuito, GL_COMPILE);
 
-	
+
 	quad(v0, v1, v2, v3, 30, 30);
 	quad(v3, v2, v5, v4, 30, 30);
 	quad(v4, v5, v7, v6, 30, 30);
@@ -56,8 +57,8 @@ void init()
 	quad(v31, v30, v1, v0, 30, 30);
 	glEndList();
 
-	
-	
+
+
 
 
 	glGenTextures(1, &tex0);
@@ -97,7 +98,27 @@ void init()
 
 	glGenTextures(1, &tex7);
 	glBindTexture(GL_TEXTURE_2D, tex7);
-	loadImageFile("mario.gif");
+	loadImageFile("mario.png");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex8);
+	glBindTexture(GL_TEXTURE_2D, tex8);
+	loadImageFile("rojo.jpg");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex9);
+	glBindTexture(GL_TEXTURE_2D, tex9);
+	loadImageFile("verde.jpg");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex10);
+	glBindTexture(GL_TEXTURE_2D, tex10);
+	loadImageFile("nubes.jpg");
+	glEnable(GL_TEXTURE_2D);
+
+	glGenTextures(1, &tex11);
+	glBindTexture(GL_TEXTURE_2D, tex11);
+	loadImageFile("cielo6.jpg");
 	glEnable(GL_TEXTURE_2D);
 
 	glGetFloatv(GL_MODELVIEW_MATRIX, coef);
@@ -108,7 +129,7 @@ void init()
 	glLightfv(GL_LIGHT0, GL_AMBIENT, Al0);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, Dl0);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, Sl0);
-	
+
 
 	GLfloat Al1[] = { 0.5,0.5,0.5,1.0 };
 	GLfloat Dl1[] = { 1.0,1.0,1.0,1.0 };
@@ -118,7 +139,7 @@ void init()
 	glLightfv(GL_LIGHT1, GL_SPECULAR, Sl1);
 	glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 25);
 	glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 20);
-	
+
 
 	GLfloat Al2[] = { 0.0,0.0,0.0,1.0 };
 	GLfloat Dl2[] = { 0.5,0.5,0.2,1.0 };
@@ -130,7 +151,7 @@ void init()
 	glLightfv(GL_LIGHT2, GL_SPECULAR, Sl2);
 	glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, 30);
 	glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, 10);
-	
+
 
 	GLfloat dir_central2[] = { -2.0,-1.0,0.0 };
 	glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, dir_central2);
@@ -156,8 +177,8 @@ void init()
 	glEnable(GL_LIGHT5);
 
 	glEnable(GL_DEPTH_TEST);
-	
-	
+
+
 }
 
 void moverVehiculo()
@@ -165,8 +186,8 @@ void moverVehiculo()
 	static int horaAnterior = glutGet(GLUT_ELAPSED_TIME);
 	int horaActual = glutGet(GLUT_ELAPSED_TIME);
 	float tiempoTranscurrido = horaActual - horaAnterior;
-	pos_x += velocity*(tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
-	pos_z += velocity*(tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
+	pos_x += velocity * (tiempoTranscurrido / 1000.0)*sin(grad*PI / 180.0);
+	pos_z += velocity * (tiempoTranscurrido / 1000.0)*cos(grad*PI / 180.0);
 	look_z = pos_z + cos(grad*PI / 180.0);
 	look_x = pos_x + sin(grad*PI / 180.0);
 	horaAnterior = horaActual;
@@ -175,8 +196,8 @@ void moverVehiculo()
 void display()
 
 {
-	
-	
+
+
 	glClear(GL_ACCUM_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -185,9 +206,10 @@ void display()
 	glGetFloatv(GL_MODELVIEW_MATRIX, coef);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
-	
-	
-	
+	glEnable(GL_TEXTURE_2D);
+
+
+
 
 	GLfloat posicion[] = { 0,10,0,0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, posicion);
@@ -218,7 +240,7 @@ void display()
 		glEnable(GL_LIGHTING);
 		glEnable(GL_LIGHT1);
 	}
-	
+
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -226,23 +248,8 @@ void display()
 	moverVehiculo();
 	if (efectos == ON) {
 		gluLookAt(0, 0, 0, 0, 0, -1, 0, 1, 0);
-		
-		glPushMatrix(); 
-		if (velocity > 3) {
-			glColor3f(1.000, 0.000, 0.000);
-		}
-		else {
-			glColor3f(0.000, 1.000, 0.498);
-		}
-		glBegin(GL_POLYGON);
 
-		glTranslatef(-0.5,-5,0);
-		glVertex3f(1.2, (velocity / 3) -0.82, -2.0);
-		glVertex3f(1.5, (velocity / 3) -0.82, -2.0);
-		glVertex3f(1.5, -0.82, -2.0);
-		glVertex3f(1.2, -0.82, -2.0);
-		glEnd();
-		glPopMatrix();
+		
 
 		glBindTexture(GL_TEXTURE_2D, tex7);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -252,21 +259,55 @@ void display()
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPEAT);
 
-		//glPushMatrix();
-		//glBegin(GL_POLYGON);
-		//glTranslatef(-0.5, -5, 0);
-		//glTexCoord2f(0.0, 1.0);
-		//glVertex3f(-0.5, 0.5, -2.0);
-		//glTexCoord2f(1.0, 1.0);
-		//glVertex3f(1, 0.5, -2.0);
-		//glTexCoord2f(1.0, 0.0);
-		//glVertex3f(1, -0.82, -2.0);
-		//glTexCoord2f(0.0, 0.0);
-		//glVertex3f(-0.5, -0.82, -2.0);
-		//glEnd();
-		//glPopMatrix();
-
+		glPushMatrix();
+		glBegin(GL_POLYGON);
+		glTranslatef(-0.5, -5, 0);
+		glTexCoord2f(0.0, 0.0);
+		glVertex3f(-0.5, -0.82, -2.0);
+		glTexCoord2f(1.0, 0.0);
+		glVertex3f(1, -0.82, -2.0);
+		glTexCoord2f(1.0, 1.0);
+		glVertex3f(1, 0.5, -2.0);
+		glTexCoord2f(0.0, 1.0);
+		glVertex3f(-0.5, 0.5, -2.0);
 		
+		
+		
+		glEnd();
+		glPopMatrix();
+
+		glPushMatrix();
+		if (velocity > 3) {
+			glBindTexture(GL_TEXTURE_2D, tex8);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			// c. Forma de combinar y repetir
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPEAT);
+
+		}
+		else {
+			glBindTexture(GL_TEXTURE_2D, tex9);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			// c. Forma de combinar y repetir
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPEAT);
+
+		}
+		glBegin(GL_POLYGON);
+
+		glTranslatef(-0.5, -5, 0);
+		glVertex3f(1.2, (velocity / 3) - 0.82, -2.0);
+		glVertex3f(1.5, (velocity / 3) - 0.82, -2.0);
+		glVertex3f(1.5, -0.82, -2.0);
+		glVertex3f(1.2, -0.82, -2.0);
+		glEnd();
+		glPopMatrix();
+
+
 	}
 
 
@@ -277,7 +318,7 @@ void display()
 	//glClear(GL_DEPTH_BUFFER_BIT);
 	ejes();
 
-	if (luces == ACTIVAR){
+	if (luces == ACTIVAR) {
 
 		glEnable(GL_LIGHT0);
 
@@ -310,7 +351,12 @@ void display()
 		glEnable(GL_TEXTURE_2D);
 		if (luces == ACTIVAR) {
 			//Circuito arcoiris sólido
-			glBindTexture(GL_TEXTURE_2D, tex0);
+			if (textura == DIA) {
+				glBindTexture(GL_TEXTURE_2D, tex10);
+			}
+			else if (textura == NOCHE) {
+				glBindTexture(GL_TEXTURE_2D, tex0);
+			}
 			// b. Filtros
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -335,7 +381,12 @@ void display()
 			glMaterialf(GL_FRONT, GL_SHININESS, s);
 		}
 		else if (luces == DESACTIVAR) {
-			glBindTexture(GL_TEXTURE_2D, tex0);
+			if (textura == DIA) {
+				glBindTexture(GL_TEXTURE_2D, tex10);
+			}
+			else if (textura == NOCHE) {
+				glBindTexture(GL_TEXTURE_2D, tex0);
+			}
 			// b. Filtros
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -359,7 +410,12 @@ void display()
 
 		if (luces == ACTIVAR) {
 			//Fondo paisaje sólido
-			glBindTexture(GL_TEXTURE_2D, tex6);
+			if (textura == DIA) {
+				glBindTexture(GL_TEXTURE_2D, tex11);
+			}
+			else if (textura == NOCHE) {
+				glBindTexture(GL_TEXTURE_2D, tex6);
+			}
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 			// c. Forma de combinar y repetir
@@ -369,7 +425,13 @@ void display()
 		}
 		else if (luces == DESACTIVAR) {
 			//Fondo paisaje sólido
-			glBindTexture(GL_TEXTURE_2D, tex6);
+			if (textura == DIA) {
+				glBindTexture(GL_TEXTURE_2D, tex11);
+			}
+			else if (textura == NOCHE) {
+				glBindTexture(GL_TEXTURE_2D, tex6);
+			}
+			//glBindTexture(GL_TEXTURE_2D, tex6);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 			// c. Forma de combinar y repetir
@@ -588,7 +650,7 @@ void display()
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 		}
-		else if (luces == DESACTIVAR){
+		else if (luces == DESACTIVAR) {
 			//Pancarta de Star Wars sólida
 			glBindTexture(GL_TEXTURE_2D, tex5);
 			// b. Filtros
@@ -766,7 +828,7 @@ void display()
 		glCallList(circuito);
 	}
 
-	
+
 	glFlush();
 	glutSwapBuffers();
 }
@@ -828,6 +890,10 @@ void onKey(unsigned char tecla, int x, int y) {
 		break;
 	case 'c': efectos = OFF;
 		break;
+	case 't': textura = DIA;
+		break;
+	case 'T': textura = NOCHE;
+		break;
 	}
 	glutPostRedisplay();
 }
@@ -836,9 +902,23 @@ void main(int argc, char** argv)
 {
 	FreeImage_Initialise();
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH|GLUT_ACCUM);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH | GLUT_ACCUM);
 	glutInitWindowSize(600, 400);
 	glutCreateWindow("Interfaz de conducción. SPEED 0 m/s");
+	std::cout << "Version: OpenGL " << glGetString(GL_VERSION) << endl;
+	std::cout << "Controles: " << endl;
+	std::cout << "Boton s: Circuito modo alambrico" << endl;
+	std::cout << "Boton S: Circuito con texturas"  << endl;
+	std::cout << "Boton L: Iluminacion activada"  << endl;
+	std::cout << "Boton l: Iluminacion desactivada"  << endl;
+	std::cout << "Boton n: Niebla habilitada" << endl;
+	std::cout << "Boton N: Niebla deshabilitada"  << endl;
+	std::cout << "Boton C: Elementos solidarios con la camara activados" << endl;
+	std::cout << "Boton c: Elementos solidarios con la camara desactivados"  << endl;
+	std::cout << " "  << endl;
+	std::cout << "Especial: "  << endl;
+	std::cout << "Boton t: Circuito con texturas de dia " << endl;
+	std::cout << "Boton T: Circuito con texturas de noche " << endl;
 	init();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
