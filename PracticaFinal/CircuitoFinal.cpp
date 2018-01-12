@@ -219,7 +219,7 @@ void display()
 	glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, dir_central);
 
 	//NIEBLA
-	if (niebla == HUMEDO && luces == ACTIVAR) {
+	if (niebla == HUMEDO && luces == ACTIVAR && textura == NOCHE) {
 		GLfloat color_niebla[3] = { 0.545, 0.271, 0.075 };
 		glEnable(GL_FOG);
 		glFogfv(GL_FOG_COLOR, color_niebla);
@@ -228,10 +228,21 @@ void display()
 	else if (niebla == SECO) {
 		glDisable(GL_FOG);
 	}
-	else if (niebla == HUMEDO && luces == DESACTIVAR) {
+	else if (niebla == HUMEDO && luces == DESACTIVAR && textura == NOCHE) {
 		GLfloat color_niebla2[3] = { 0.627, 0.322, 0.176 };
 		glEnable(GL_FOG);
 		glFogfv(GL_FOG_COLOR, color_niebla2);
+		glFogf(GL_FOG_DENSITY, 0.3);
+	} else if (niebla == HUMEDO && luces == ACTIVAR && textura == DIA){
+		GLfloat color_niebla3[3] = { 0.502, 0.502, 0.502 };
+		glEnable(GL_FOG);
+		glFogfv(GL_FOG_COLOR, color_niebla3);
+		glFogf(GL_FOG_DENSITY, 0.3);
+	}
+	else if (niebla == HUMEDO && luces == DESACTIVAR && textura == DIA) {
+		GLfloat color_niebla4[3] = { 0.753, 0.753, 0.753 };
+		glEnable(GL_FOG);
+		glFogfv(GL_FOG_COLOR, color_niebla4);
 		glFogf(GL_FOG_DENSITY, 0.3);
 	}
 
